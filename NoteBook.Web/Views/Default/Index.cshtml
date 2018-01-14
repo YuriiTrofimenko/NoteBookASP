@@ -1,0 +1,25 @@
+﻿@*@model IQueryable<NoteBook.Domain.Entity.State>*@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteBook2</title>
+    <meta name="author" content="Yurii Trofimenko">
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div>
+        @*@foreach (var order in Model)
+        {
+        <div>@order.id</div>
+        }*@
+    </div>
+    <script src='@Url.Content("~/wwwroot/js/jquery-3.2.1.min.js")'></script>
+    <script src='@Url.Content("~/wwwroot/js/custom.js")'></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NoteBookModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AnOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customer_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="state_id" Type="Int32" />
+    <NavigationProperty Name="State" Relationship="Self.FK_dbo_AnOrders_dbo_States_state_id" FromRole="AnOrders" ToRole="States" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AnOrders" Relationship="Self.FK_dbo_AnOrders_dbo_States_state_id" FromRole="States" ToRole="AnOrders" />
+  </EntityType>
+  <Association Name="FK_dbo_AnOrders_dbo_States_state_id">
+    <End Role="States" Type="Self.State" Multiplicity="0..1" />
+    <End Role="AnOrders" Type="Self.AnOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="AnOrders">
+        <PropertyRef Name="state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NoteBookEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AnOrders" EntityType="Self.AnOrder" />
+    <EntitySet Name="States" EntityType="Self.State" />
+    <AssociationSet Name="FK_dbo_AnOrders_dbo_States_state_id" Association="Self.FK_dbo_AnOrders_dbo_States_state_id">
+      <End Role="States" EntitySet="States" />
+      <End Role="AnOrders" EntitySet="AnOrders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
