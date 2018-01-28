@@ -45,11 +45,25 @@ namespace NoteBook.Web.Controllers
                                     result =
                                         mRepository.States.ToArray();
                                 }
-                                catch (Exception)
+                                catch (Exception ex)
                                 {
 
-                                    result = new { error = "error" };
+                                    result = new { error = ex.Message };
                                 }
+                            }
+                            break;
+                        }
+                    case "orders":
+                        {
+                            try
+                            {
+                                result =
+                                    mRepository.Orders.ToArray();
+                            }
+                            catch (Exception ex)
+                            {
+
+                                result = new { error = ex.Message };
                             }
                             break;
                         }

@@ -96,12 +96,15 @@
     <Content Include="wwwroot\css\bootstrap\bootstrap-reboot.min.css" />
     <Content Include="wwwroot\css\bootstrap\bootstrap.css" />
     <Content Include="wwwroot\css\bootstrap\bootstrap.min.css" />
+    <Content Include="wwwroot\css\custom.css" />
+    <Content Include="wwwroot\js\app-admin.js" />
     <Content Include="wwwroot\js\bootstrap\bootstrap.bundle.js" />
     <Content Include="wwwroot\js\bootstrap\bootstrap.bundle.min.js" />
     <Content Include="wwwroot\js\bootstrap\bootstrap.js" />
     <Content Include="wwwroot\js\bootstrap\bootstrap.min.js" />
     <Content Include="wwwroot\js\custom.js" />
     <Content Include="wwwroot\js\jquery-3.2.1.min.js" />
+    <Content Include="wwwroot\js\jquery-hashchange.js" />
     <Content Include="wwwroot\pages\orders.htm" />
     <Content Include="wwwroot\pages\states.htm" />
     <None Include="packages.config" />

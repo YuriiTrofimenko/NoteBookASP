@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿/*$(document).ready(function () {
 
     //alert('Hello!');
     $.ajax({
@@ -18,4 +18,4 @@
     }).fail(function (jqXHR, textStatus, errorThrown) {
         console.log(textStatus);
     });
-});
+});*/
